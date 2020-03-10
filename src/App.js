@@ -1,16 +1,12 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import './App.css';
-import LunchMenu from './lunchMenu'
-
 
 function App() {
-  
+
   return (
-    <div>
-      <header className="App-header">
-        <LunchMenu/>
-      </header>
-    </div>
+    <Fragment>    
+         
+    </Fragment>
   );
 }
 

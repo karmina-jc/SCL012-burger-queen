@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import './App.css';
-import db from './config/firebase'
+import db from '../config/firebase'
 
 
 

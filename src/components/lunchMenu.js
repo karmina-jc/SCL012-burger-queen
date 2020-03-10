@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import db from './config/firebase';
+import db from '../config/firebase';
 
 
 class lunchMenu extends Component {

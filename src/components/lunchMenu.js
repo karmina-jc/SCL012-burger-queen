@@ -28,8 +28,7 @@ class lunchMenu extends Component {
         {this.state.menuA.map((item, key) =>{
             return (
               <div key={key}>
-                <p>{item.nombre}</p>
-                <p>{item.precio} </p>
+                <button>{item.nombre} ${item.precio}</button>
               </div>
             ) 
           })          

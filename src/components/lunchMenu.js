@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { v4 as uuidv4 } from "uuid";
 import db from '../config/firebase';
 
 
@@ -29,7 +30,7 @@ class lunchMenu extends Component {
         {this.state.menuA.map((item, key) =>{
             return (
               <div key={key}>
-                <button onClick={this.props.addFood}>{item.nombre} ${item.precio}</button>
+                <button onClick={this.props.addFood.bind(this, item)}><p>{item.nombre}</p> <p>${item.precio}</p></button>
               </div>
             ) 
           })          
@@ -40,4 +41,3 @@ class lunchMenu extends Component {
   }
 
   export default lunchMenu;
-

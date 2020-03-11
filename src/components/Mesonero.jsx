@@ -1,7 +1,8 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, Component } from "react";
 import { v4 as uuidv4 } from "uuid";
 import UserTable from "./UserTable";
 import AddProductForm from "./AddProductForm";
+
 import LunchMenu from "./lunchMenu";
 
 const Mesonero = () => {
@@ -16,12 +17,15 @@ const Mesonero = () => {
 
   // agrega usuarios
   const addFood = food => {
+    console.log("SE EJECUTA Y TRAE:", food);
     food.id = uuidv4();
     setFoodList([...foodList, food]);
+    console.log("STATE EN MESONERO.JSX", foodList);
   };
 
   // elimina producto
   const deleteProduct = id => {
+    console.log("id en Mesonero.jsx es:", id);
     const arrayFiltrado = foodList.filter(food => food.id !== id);
     setFoodList(arrayFiltrado);
   };

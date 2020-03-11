@@ -1,43 +1,66 @@
-import React, { Fragment } from "react";
+import React, { Fragment, Component } from "react";
 
-const UserTable = props => {
-  return (
-    <Fragment>
-      <table>
-        <thead>
-          <tr>
-            <th>Food</th>
-            <th>Price</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {props.foodList.length > 0 ? (
-            props.foodList.map((product, id) => (
-              <tr key={product.id}>
-                <td>{product.food}</td>
-                <td>{product.price}</td>
-                <td>
-                  <button
-                    className="button muted-button"
-                    onClick={() => {
-                      props.deleteProduct(product.id);
-                    }}
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))
-          ) : (
+class UserTable extends Component {
+  constructor(props) {
+    super(props);
+    console.log("FOOD EN PROPS", props.foodList);
+    this.state = {
+      foodList: props.foodList
+    }
+  }
+
+  deleteFoodFromList = (id) => {
+    let newArrayOfFood = this.state.foodList.filter(food => {
+      return food.id !== id;
+    });
+
+    this.setState(
+      {
+        foodList: newArrayOfFood
+      }
+    );
+  }
+
+  render() {
+    return (
+      <Fragment>
+        <table>
+          <thead>
             <tr>
-              <td colSpan={3}>No order</td>
+              <th>Food</th>
+              <th>Price</th>
+              <th>Actions</th>
             </tr>
-          )}
-        </tbody>
-      </table>
-    </Fragment>
-  );
+          </thead>
+          <tbody>
+            {this.state.foodList.length > 0 ? (
+              this.state.foodList.map((product, id) => (
+                <tr key={product.id}>
+                  <td>{product.food}</td>
+                  <td>{product.price}</td>
+                  <td>
+                    <button
+                      className="button muted-button"
+                      onClick={() => {
+                        this.deleteFoodFromList(product.id);
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan={3}>No order</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </Fragment>
+    );
+  }
+  
 };
 
 export default UserTable;

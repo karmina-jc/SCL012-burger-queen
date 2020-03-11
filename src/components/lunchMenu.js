@@ -21,6 +21,7 @@ class lunchMenu extends Component {
     })
         
   }
+
   render(){
     return (      
       <div>
@@ -28,7 +29,7 @@ class lunchMenu extends Component {
         {this.state.menuA.map((item, key) =>{
             return (
               <div key={key}>
-                <button>{item.nombre} ${item.precio}</button>
+                <button onClick={this.props.addFood}>{item.nombre} ${item.precio}</button>
               </div>
             ) 
           })          

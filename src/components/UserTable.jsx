@@ -1,25 +1,24 @@
 import React, { Fragment, Component } from "react";
 
+
 class UserTable extends Component {
   constructor(props) {
     super(props);
     console.log("FOOD EN PROPS", props.foodList);
     this.state = {
       foodList: props.foodList
-    }
+    };
   }
 
-  deleteFoodFromList = (id) => {
+  deleteFoodFromList = id => {
     let newArrayOfFood = this.state.foodList.filter(food => {
       return food.id !== id;
     });
 
-    this.setState(
-      {
-        foodList: newArrayOfFood
-      }
-    );
-  }
+    this.setState({
+      foodList: newArrayOfFood
+    });
+  };
 
   render() {
     return (
@@ -33,9 +32,10 @@ class UserTable extends Component {
             </tr>
           </thead>
           <tbody>
+            
             {this.state.foodList.length > 0 ? (
               this.state.foodList.map((product, id) => (
-                <tr key={product.id}>
+                <tr key={id}>
                   <td>{product.food}</td>
                   <td>{product.price}</td>
                   <td>
@@ -60,7 +60,6 @@ class UserTable extends Component {
       </Fragment>
     );
   }
-  
-};
+}
 
 export default UserTable;

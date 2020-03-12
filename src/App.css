@@ -1,50 +1,75 @@
 
 body{
   background-color: white;
-  /* background-image: url("./img.svg/camarero.jpg"); */
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Sen', sans-serif;
   margin: 0;
   min-height: 100%;
 }
 
-
-.App {
-  text-align: center;
-  
+.mainTitle {
+  font-family: 'Sen', sans-serif;
+  color: #c23616;
+  margin-left: 35%;
+  font-size: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  font-family: 'Sen', sans-serif;
+  color: #c23616;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.formUser {
+  margin-left: 30%;
+  margin-right: 30%;
 }
 
-.App-header {
-  background-color: #282c34;
-  /* background-image: url("./img.svg/header.jpg"); */
-  min-height: 100vh;
+.menu{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  align-content: space-around;
 }
 
-.App-link {
-  color: #61dafb;
+.menuButton {
+  padding: 15px;
+  margin: 5px;
+  border-style: none;
+  border-radius: 20px;
+  background-color: #273c75;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.iconButton {
+  width: 50px;
+}
+
+.menuButton:hover {
+  border-style: none;
+  background-color: #fbc531;
+  color: #192a56;
+}
+
+.generalButtons {
+  font-family: 'Sen', sans-serif;
+  border-style: none;
+  border-radius: 20px;
+  background-color: #c23616;
+}
+
+.generalButtons:hover {
+  border-style: none;
+  background-color: #e84118;
+}
+
+.navButton {
+  border-style: none;
+  border-radius: 10px;
+  background-color: #fbc531;
+  padding: 20px;
+  margin: 10px;
+}
+
+.navButton:hover {
+  border-style: none;
+  
+  background-color: #273c75;
 }

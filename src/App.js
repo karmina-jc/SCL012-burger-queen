@@ -9,13 +9,13 @@ function App() {
   
   return (
     <Router>
-      <button>
+      <button className="navButton">
         <Link to="/home">Home</Link>
       </button>
-      <button>
+      <button className="navButton">
         <Link to="/mesonero">Mesonero</Link>
       </button>
-      <button>
+      <button className="navButton">
         <Link to="/cocina">Cocina</Link>
       </button>
 

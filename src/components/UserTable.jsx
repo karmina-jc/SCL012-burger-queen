@@ -32,29 +32,7 @@ class UserTable extends Component {
             </tr>
           </thead>
           <tbody>
-            
-            {this.state.foodList.length > 0 ? (
-              this.state.foodList.map((product, id) => (
-                <tr key={id}>
-                  <td>{product.food}</td>
-                  <td>{product.price}</td>
-                  <td>
-                    <button
-                      className="button muted-button"
-                      onClick={() => {
-                        this.deleteFoodFromList(product.id);
-                      }}
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))
-            ) : (
-              <tr>
-                <td colSpan={3}>No order</td>
-              </tr>
-            )}
+
           </tbody>
         </table>
       </Fragment>

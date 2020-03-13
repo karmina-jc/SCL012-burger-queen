@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from "react";
+import React, { Component, Fragment } from "react";
 
 import UserTable from "./UserTable";
 import AddProductForm from "./AddProductForm";
@@ -40,31 +40,46 @@ class Mesonero extends Component {
       });
   }
 
- 
+
 
 
 
 
   render() {
     return (
-      
-     <Fragment>
-       <div>
-         <h1 className="mainTitle">Mesonero</h1>
-       </div>
-      <div className="menu">
-        {this.state.menuA.map((item, key)=>{
-          return(
-            <div key={key}>
-              <LunchMenu name={item.nombre} price={item.precio} image={item.img}/>
-              {/* <UserTable/> */}
-              
+
+      <Fragment>
+        <div>
+          <div className="container">
+            <div className="flex-row">
+              <div className="flex-large">
+                {
+                  <div>
+                    <AddProductForm />
+                  </div>
+                }
+                <div>
+                  <h1 className="mainTitle">Mesonero</h1>
+                </div>
+                <div className="menu">
+                  {this.state.menuA.map((item, key) => {
+                    return (
+                      <div key={key}>
+                        <LunchMenu name={item.nombre} price={item.precio} image={item.img} />
+                      </div>
+                    )
+                  })}
+
+                </div>
+              </div>
+              <div className="flex-large">
+                <h2>View Order</h2>
+                <UserTable />
+              </div>
             </div>
-          )
-        })}
-        
-      </div>
-     
+          </div>
+        </div>
+
       </Fragment>
     );
   }

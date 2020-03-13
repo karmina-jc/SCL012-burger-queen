@@ -6,6 +6,7 @@ import Mesonero from "./components/Mesonero.jsx";
 import Cocina from "./components/Cocina.jsx";
 
 function App() {
+  
   return (
     <Router>
       <button className="navButton">
@@ -24,4 +25,5 @@ function App() {
     </Router>
   );
 }
+
 export default App;

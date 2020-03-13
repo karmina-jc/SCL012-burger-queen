@@ -1,11 +1,11 @@
 import React, { Fragment, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import Products from "./Products.json";
 import UserTable from "./UserTable";
 import AddProductForm from "./AddProductForm";
-import ButtonProduct from "./Button";
+import LunchMenu from "./lunchMenu";
 
 const Mesonero = () => {
+
   const foodData = [
     { id: uuidv4(), food: "Café americano", price: 500 },
     { id: uuidv4(), food: "Café con leche", price: 700 },
@@ -16,13 +16,12 @@ const Mesonero = () => {
   const [foodList, setFoodList] = useState(foodData);
 
   // agrega usuarios
-  const addFood = food => {
-    food.id = uuidv4();
+  const addFood = (food) => {
     setFoodList([...foodList, food]);
   };
-
+  
   // elimina producto
-  const deleteProduct = id => {
+  const deleteProduct = (id) => {
     const arrayFiltrado = foodList.filter(food => food.id !== id);
     setFoodList(arrayFiltrado);
   };
@@ -35,14 +34,11 @@ const Mesonero = () => {
   return (
     <Fragment>
       <h1>Mesonero</h1>
-
       <div>
         {/* <header className="App-header">
     
       </header> */}
-
         <div className="container">
-          <h1>Burger Queen</h1>
           <div className="flex-row">
             <div className="flex-large">
               {
@@ -52,12 +48,17 @@ const Mesonero = () => {
                 </div>
               }
               <div>
-                <ButtonProduct Products={Products} />
+                <LunchMenu addFood={addFood} />
               </div>
             </div>
             <div className="flex-large">
               <h2>View Order</h2>
-              <UserTable foodList={foodList} deleteProduct={deleteProduct} />
+              <UserTable 
+                foodList={foodList} 
+                Products={Products}
+                deleteProduct={deleteProduct}
+              />
+
             </div>
           </div>
         </div>

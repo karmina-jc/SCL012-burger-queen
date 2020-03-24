@@ -31,8 +31,15 @@ class UserTable extends Component {
               <th>Actions</th>
             </tr>
           </thead>
-          <tbody>
-
+            <tbody>
+            <td> Agua 500ml</td>
+            <td> 500 </td>
+            <td><button>Delete</button></td>
+            <tr>
+            <td> Hamburguesa simple</td>
+            <td>1000</td>
+            <td><button>Delete</button></td>
+            </tr>
           </tbody>
         </table>
       </Fragment>

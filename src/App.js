@@ -9,8 +9,7 @@ import Logo from './Logo-burgerQueen.png'
 function App() {
   
   return (
-    <div className="navbar">
-    <div className ="buttonBar">
+       
     <Router>      
       <button className="navButton">
         <Link to="/home">Home</Link>
@@ -26,13 +25,12 @@ function App() {
       <Route path="/cocina" component={Cocina} />
       <Route path="/mesonero" component={Mesonero} />
 
-    </Router>
-    </div>
-    <div className="logo">
+      <div className="logo">
     <img src={Logo} alt='' ></img> 
     </div>
 
-    </div>
+    </Router>
+ 
   );
 }
 
